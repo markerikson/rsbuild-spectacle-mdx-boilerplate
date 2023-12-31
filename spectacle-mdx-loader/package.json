@@ -1,0 +1,4 @@
+{
+  "name": "spectacle-mdx-loader-fork",
+  "main": "./lib/index.js"
+}

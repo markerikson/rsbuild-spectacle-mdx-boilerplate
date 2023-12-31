@@ -1,0 +1,73 @@
+<!-- prettier-ignore-start -->
+import { Cite, Slide, Heading, Text, Box, FlexBox, Image, Appear, Markdown } from "spectacle";
+import {LeftContentRightContent, LeftCodeRightContent, LeftCodeRightMarkdown, LeftContentRightMarkdown, LeftCodeRightCode, TitleDummy} from "components/layout";
+<!-- prettier-ignore-end -->
+
+# Spectacle Presentation (MDX) 👋
+
+This is a presentation that uses Spectacle and MDX for slides.
+
+Notes: These are presenter notes. This text will be automatically exported as `notes` from either your MDX file (e.g. `import {notes} from './my-file.mdx'`).
+
+
+
+---
+
+#### React-Redux vNext?
+
+- Current version: v7.2
+  - Stable, no immediate plans for changes
+- Long-term question: Concurrent Mode and Suspense
+  - External state tools will have issues with Concurrent Mode because React wants to own state updates and reorder them
+  - React team created [new experimental `useMutableSource` hook](https://github.com/reactjs/rfcs/pull/147) specifically for use with external state tools like Redux
+- Will likely build React-Redux v8 around `useMutableSource` whenever CM finally is ready
+  - Not 100% sure that `connect` will be fully CM-compat (might just take extra work)
+
+---
+
+import useDispatch from "./examples/useDispatch";
+
+#### React-Redux: `useDispatch()`
+
+<LeftCodeRightMarkdown leftSource={useDispatch}>{`
+- Returns the store's \`dispatch\` method
+- Differences from \`connect\` and \`mapDispatch\`:
+  - Equivalent to calling \`connect\` with no \`mapDispatch\` argument
+  - No "binding action creators" any more - up to you to call \`dispatch()\` in your own handlers
+`}</LeftCodeRightMarkdown>
+
+---
+
+# Write your Spectacle Presentations in Markdown
+
+## And seamlessly use React Components
+
+**How sweet is that**
+**(super sweet)**
+
+---
+
+![datboi](https://pbs.twimg.com/media/CkjFUyTXEAEysBY.jpg)
+
+---
+
+###### Typography
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+Standard Text
+
+---
+
+> Example Quote
+
